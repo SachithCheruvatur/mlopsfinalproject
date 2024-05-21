@@ -98,13 +98,21 @@ def generate_suggestions(seeds, num_steps=10):
 def semantic_search(seed):
     pass
 
-def running_the_programme(seed):
-    res_list = []
-    semantically_related_words = semantic_search(seed)
-    semantically_related_words = ['sweaters', 'jacket', 'hoodies'] #chand
-    suggestions = generate_suggestions(semantically_related_words, num_steps=50)
-    for i in suggestions: 
-        res_list = i.splitlines()
-        #print (res_list[0])
-    return res_list
+# def running_the_programme(seed):
+#     res_list = []
+#     semantically_related_words = semantic_search(seed)
+#     semantically_related_words = ['sweaters', 'jacket', 'hoodies'] #chand
+#     suggestions = generate_suggestions(semantically_related_words, num_steps=50)
+#     for i in suggestions: 
+#         res_list = i.splitlines()
+#         #print (res_list[0])
+#     return res_list
+
+res_list = []
+semantically_related_words = ['sweaters', 'jacket', 'hoodies'] 
+suggestions = generate_suggestions(semantically_related_words, num_steps=50)
+for i in suggestions: 
+    res_list = i.splitlines()
+    print (res_list[0])
+
     

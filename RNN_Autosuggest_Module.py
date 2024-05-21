@@ -54,9 +54,9 @@ class OneStep(tf.keras.Model):
 
 def load_model_and_vocab(checkpoint_dir, file_path):
     # Load the vocabulary and mappings
-    with open(file_path, "r") as file:
-        text = file.read()
-    vocab = sorted(set(text))
+    # with open(file_path, "r") as file:
+    #     text = file.read()
+    vocab = ['\n', ' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     ids_from_chars = tf.keras.layers.StringLookup(vocabulary=list(vocab), mask_token=None)
     chars_from_ids = tf.keras.layers.StringLookup(vocabulary=ids_from_chars.get_vocabulary(), invert=True, mask_token=None)
 

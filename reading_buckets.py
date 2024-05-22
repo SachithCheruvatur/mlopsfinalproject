@@ -11,6 +11,8 @@ if response.status_code == 200:
   # Get the content as a string
   content = response.text
   # Print the content
+  print("content",type(content))
+  print("response", type(response))
   print(content)
 else:
   print(f"Error: Could not retrieve file. Status code: {response.status_code}")

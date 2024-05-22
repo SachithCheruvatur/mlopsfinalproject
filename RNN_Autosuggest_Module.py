@@ -1,6 +1,6 @@
 #chatGPT
 import tensorflow as tf
-import tensorflow_io as tfio  # Import the tensorflow-io package
+#import tensorflow_io as tfio  # Import the tensorflow-io package
 
 
 # Define the model class as it was originally

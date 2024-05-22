@@ -1,7 +1,5 @@
-#chatGPT
 import tensorflow as tf
 import tensorflow_io as tfio  # Import the tensorflow-io package
-
 
 # Define the model class as it was originally
 class MyModel(tf.keras.Model):
@@ -60,6 +58,9 @@ def load_model_and_vocab(gcs_checkpoint_dir):
 
     # Load the latest checkpoint from GCS
     latest_checkpoint = tf.train.latest_checkpoint(gcs_checkpoint_dir)
+    
+    if latest_checkpoint is None:
+        raise FileNotFoundError(f"No checkpoint found in directory {gcs_checkpoint_dir}")
 
     # Define the model parameters
     vocab_size = len(ids_from_chars.get_vocabulary())
@@ -93,11 +94,10 @@ def generate_suggestions(seeds, num_steps=10):
     return suggestions
 
 res_list = []
-#semantically_related_words = semantic_search(seed)
 semantically_related_words = ['sweaters', 'jacket', 'hoodies']
 
 suggestions = generate_suggestions(semantically_related_words, num_steps=50)
 for i in suggestions: 
     res_list = i.splitlines()
-    #print (res_list[0])
-print (res_list)
+
+print(res_list)

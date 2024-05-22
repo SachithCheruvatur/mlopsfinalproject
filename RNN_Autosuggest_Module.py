@@ -77,7 +77,7 @@ def load_model_and_vocab(gcs_checkpoint_dir):
     return one_step_model
 
 def generate_suggestions(seeds, num_steps=10):
-    gcs_checkpoint_dir = 'gs://mlopsfileprojectbucket/one_step'
+    gcs_checkpoint_dir = 'gs://mlopsfileprojectbucket/training_checkpoints'
     one_step_model = load_model_and_vocab(gcs_checkpoint_dir)
 
     states = None

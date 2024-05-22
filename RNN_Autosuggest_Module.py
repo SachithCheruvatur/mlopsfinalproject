@@ -1,6 +1,7 @@
+#chatGPT
 import tensorflow as tf
-import os
-import time
+import tensorflow_io as tfio  # Import the tensorflow-io package
+
 
 # Define the model class as it was originally
 class MyModel(tf.keras.Model):
@@ -52,16 +53,13 @@ class OneStep(tf.keras.Model):
         predicted_chars = self.chars_from_ids(predicted_ids)
         return predicted_chars, states
 
-def load_model_and_vocab(checkpoint_dir, file_path):
-    # Load the vocabulary and mappings
-    # with open(file_path, "r") as file:
-    #     text = file.read()
+def load_model_and_vocab(gcs_checkpoint_dir):
     vocab = ['\n', ' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     ids_from_chars = tf.keras.layers.StringLookup(vocabulary=list(vocab), mask_token=None)
     chars_from_ids = tf.keras.layers.StringLookup(vocabulary=ids_from_chars.get_vocabulary(), invert=True, mask_token=None)
 
-    # Load the latest checkpoint
-    latest_checkpoint = tf.train.latest_checkpoint(checkpoint_dir)
+    # Load the latest checkpoint from GCS
+    latest_checkpoint = tf.train.latest_checkpoint(gcs_checkpoint_dir)
 
     # Define the model parameters
     vocab_size = len(ids_from_chars.get_vocabulary())
@@ -75,12 +73,11 @@ def load_model_and_vocab(checkpoint_dir, file_path):
     # Create an instance of OneStep with the loaded model
     one_step_model = OneStep(model, chars_from_ids, ids_from_chars)
     
-    return one_step_model, ids_from_chars, chars_from_ids
+    return one_step_model
 
 def generate_suggestions(seeds, num_steps=10):
-    checkpoint_dir = './training_checkpoints'
-    file_path = "/Users/sachith/Desktop/Capstone/MLOpsFinalProject/RNN_training_data.txt"
-    one_step_model, ids_from_chars, chars_from_ids = load_model_and_vocab(checkpoint_dir, file_path)
+    gcs_checkpoint_dir = 'gs://mlopsfileprojectbucket/one_step'
+    one_step_model = load_model_and_vocab(gcs_checkpoint_dir)
 
     states = None
     next_char = tf.constant(seeds)
@@ -95,24 +92,12 @@ def generate_suggestions(seeds, num_steps=10):
     
     return suggestions
 
-def semantic_search(seed):
-    pass
-
-# def running_the_programme(seed):
-#     res_list = []
-#     semantically_related_words = semantic_search(seed)
-#     semantically_related_words = ['sweaters', 'jacket', 'hoodies'] #chand
-#     suggestions = generate_suggestions(semantically_related_words, num_steps=50)
-#     for i in suggestions: 
-#         res_list = i.splitlines()
-#         #print (res_list[0])
-#     return res_list
-
 res_list = []
-semantically_related_words = ['sweaters', 'jacket', 'hoodies'] 
+#semantically_related_words = semantic_search(seed)
+semantically_related_words = ['sweaters', 'jacket', 'hoodies']
+
 suggestions = generate_suggestions(semantically_related_words, num_steps=50)
 for i in suggestions: 
     res_list = i.splitlines()
-    print (res_list[0])
-
-    
+    #print (res_list[0])
+print (res_list)

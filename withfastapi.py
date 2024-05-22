@@ -61,19 +61,22 @@ def load_model_and_vocab(gcs_checkpoint_dir):
     chars_from_ids = tf.keras.layers.StringLookup(vocabulary=ids_from_chars.get_vocabulary(), invert=True, mask_token=None)
 
     # Load the latest checkpoint from GCS
-    latest_checkpoint = tf.train.latest_checkpoint(gcs_checkpoint_dir)
+    # latest_checkpoint = tf.train.latest_checkpoint(gcs_checkpoint_dir)
     
-    if latest_checkpoint is None:
-        raise FileNotFoundError(f"No checkpoint found in directory {gcs_checkpoint_dir}")
+    # if latest_checkpoint is None:
+    #     raise FileNotFoundError(f"No checkpoint found in directory {gcs_checkpoint_dir}")
 
-    # Define the model parameters
-    vocab_size = len(ids_from_chars.get_vocabulary())
-    embedding_dim = 256
-    rnn_units = 1024
+    # # Define the model parameters
+    # vocab_size = len(ids_from_chars.get_vocabulary())
+    # embedding_dim = 256
+    # rnn_units = 1024
 
-    # Create a new instance of the model and load the weights
-    model = MyModel(vocab_size=vocab_size, embedding_dim=embedding_dim, rnn_units=rnn_units)
-    model.load_weights(latest_checkpoint)
+    # # Create a new instance of the model and load the weights
+    # model = MyModel(vocab_size=vocab_size, embedding_dim=embedding_dim, rnn_units=rnn_units)
+    # model.load_weights(latest_checkpoint)
+
+    # Load the saved model
+    model = tf.keras.models.load_model(model_dir, custom_objects={'MyModel': MyModel})
 
     # Create an instance of OneStep with the loaded model
     one_step_model = OneStep(model, chars_from_ids, ids_from_chars)
@@ -81,8 +84,12 @@ def load_model_and_vocab(gcs_checkpoint_dir):
     return one_step_model
 
 def generate_suggestions(seeds, num_steps=10):
-    gcs_checkpoint_dir = 'gs://mlopsfileprojectbucket/training_checkpoints'
-    one_step_model = load_model_and_vocab(gcs_checkpoint_dir)
+    #gcs_checkpoint_dir = 'gs://mlopsfileprojectbucket/training_checkpoints'
+    #one_step_model = load_model_and_vocab(gcs_checkpoint_dir)
+    
+    model_dir = 'gs://mlopsfileprojectbucket/trained_model'
+    one_step_model = load_model_and_vocab(model_dir)
+
 
     states = None
     next_char = tf.constant(seeds)

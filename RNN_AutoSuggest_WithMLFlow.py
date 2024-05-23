@@ -130,24 +130,34 @@ def generate_suggestions(seeds, num_steps=100):
     logging.info(f"Generating suggestions for seeds: {seeds} with num_steps: {num_steps}")
     one_step_model = load_model_and_vocab(model_dir)
 
-    states = None
-    next_char = tf.constant(seeds)
-    result = [next_char]
+    # Start a new MLflow run
+    with mlflow.start_run() as run:
+        # Log parameters
+        mlflow.log_param("seeds", seeds)
+        mlflow.log_param("num_steps", num_steps)
 
-    for n in range(num_steps):
-        next_char, states = one_step_model.generate_one_step(next_char, states=states)
-        result.append(next_char)
+        states = None
+        next_char = tf.constant(seeds)
+        result = [next_char]
 
-    result = tf.strings.join(result)
-    suggestions = [r.numpy().decode('utf-8') for r in result]
-    
-    logging.info(f"Generated suggestions: {suggestions}")
-  
-    # Log parameters and generated suggestions with MLflow
-    mlflow.log_param("num_steps", num_steps)
-    mlflow.log_param("seeds", seeds)
-    mlflow.log_text(str(suggestions), "suggestions.txt")
-  
+        for n in range(num_steps):
+            next_char, states = one_step_model.generate_one_step(next_char, states=states)
+            result.append(next_char)
+
+        result = tf.strings.join(result)
+        suggestions = [r.numpy().decode('utf-8') for r in result]
+        
+        # Log the generated suggestions as an artifact
+        with open("/tmp/suggestions.txt", "w") as f:
+            for suggestion in suggestions:
+                f.write("%s\n" % suggestion)
+        mlflow.log_artifact("/tmp/suggestions.txt")
+        
+        # Optionally, log the suggestions as a metric or an artifact
+        mlflow.log_metric("num_suggestions", len(suggestions))
+
+        logging.info(f"Generated suggestions: {suggestions}")
+
     return suggestions
 
 # Define request and response models for FastAPI
@@ -160,22 +170,14 @@ class InputData(BaseModel):
 class OutputData(BaseModel):
     suggestions: list[str]
 
-# Define FastAPI endpoint
 @app.post("/generate-suggestions-2/", response_model=OutputData)
 def generate_suggestions_endpoint(input_data: InputData):
     try:
         list_of_words = semantic_search(input_data.seeds[0])
         if not list_of_words:
             raise ValueError("Semantic search returned no results.")
-        lower_list = []
-        for i in list_of_words:
-            lower_list.append(i.lower())
+        lower_list = [i.lower() for i in list_of_words]
         suggestions = generate_suggestions(lower_list, num_steps=input_data.num_steps)
-
-        # Log input data and output suggestions with MLflow
-        mlflow.log_params({"seeds": input_data.seeds, "num_steps": input_data.num_steps})
-        mlflow.log_text(str(suggestions), "output_suggestions.txt")
-      
         return {"suggestions": suggestions}
     except Exception as e:
         logging.error(f"Error generating suggestions: {str(e)}")

@@ -10,7 +10,7 @@ import mlflow
 import mlflow.tensorflow
 
 mlflow.set_tracking_uri("http://34.93.45.146:5000")
-mlflow.set_experiment("rnn_autosuggest_2")
+mlflow.set_experiment("rnn_autosuggest_3")
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -33,7 +33,7 @@ class InputData(BaseModel):
 class OutputData(BaseModel):
     suggestions: list[str]
 
-@app.post("/generate-suggestions-2/", response_model=OutputData)
+@app.post("/generate-suggestions-3/", response_model=OutputData)
 def generate_suggestions_endpoint(input_data: InputData):
     try:
         list_of_words = semantic_search(input_data.seeds[0])

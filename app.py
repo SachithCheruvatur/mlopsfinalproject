@@ -17,7 +17,7 @@ if st.button("Generate"):
     # Prepare data for FastAPI request
     data = {
         #"seeds": seeds_list,
-        "seeds" : seeds
+        "seeds" : seeds,
         "num_steps": num_steps
     }
     

@@ -15,7 +15,7 @@ def fetch_and_search_json(words):
 
     
     # Fetch the JSON file
-    response = requests.get(github_url)
+    response = requests.get(json_url)
     if response.status_code == 200:
         product_list = response.json()
     else:

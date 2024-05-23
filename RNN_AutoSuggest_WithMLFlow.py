@@ -12,7 +12,7 @@ import mlflow.tensorflow
 
 mlflow.set_tracking_uri("http://34.93.45.146:5000")
 
-mlflow.set_experiment("rnn_autosuggest")
+mlflow.set_experiment("rnn_autosuggest_2")
 
 # Start an MLflow run
 mlflow.start_run(run_name="my_mlops_project")

@@ -274,7 +274,7 @@ num_steps = 100  # Fixed number of steps as per your curl command
 
 def fetch_and_search_json(words):
     # URL of the JSON file in the Google Cloud bucket
-    json_url = "https://storage.googleapis.com/mlopsfileprojectbucket/Extracted%20Features.json"
+    json_url = "https://storage.googleapis.com/mlopsfileprojectbucket/Redacted_Catalog.json"
     
     # Fetch the JSON file
     response = requests.get(json_url)

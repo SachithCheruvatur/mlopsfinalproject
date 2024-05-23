@@ -114,7 +114,7 @@ def semantic_search(seed):
     logging.info(f"Semantic search results: {final_list}")
     return final_list
 
-def generate_suggestions(seeds, num_steps=10):
+def generate_suggestions(seeds, num_steps=100):
     model_dir = 'gs://mlopsfileprojectbucket/trained_model'
     logging.info(f"Generating suggestions for seeds: {seeds} with num_steps: {num_steps}")
     one_step_model = load_model_and_vocab(model_dir)
@@ -136,7 +136,9 @@ def generate_suggestions(seeds, num_steps=10):
 # Define request and response models for FastAPI
 class InputData(BaseModel):
     seeds: list[str]
-    num_steps: int = 10
+    #num_steps: int = 10
+    num_steps: int = 100
+
 
 class OutputData(BaseModel):
     suggestions: list[str]
@@ -152,23 +154,28 @@ class OutputData(BaseModel):
 #         logging.error(f"Error generating suggestions: {str(e)}")
 #         raise HTTPException(status_code=500, detail=str(e))
 
-# def generate_suggestions_endpoint(input_data: InputData):
-#     try:
-#         suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
-#         return {"suggestions": suggestions}
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
 def generate_suggestions_endpoint(input_data: InputData):
     try:
-        list_of_words = semantic_search(input_data.seeds[0])
-        if not list_of_words:
-            raise ValueError("Semantic search returned no results.")
-        suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
+        suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
         return {"suggestions": suggestions}
     except Exception as e:
-        logging.error(f"Error generating suggestions: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+# def generate_suggestions_endpoint(input_data: InputData):
+#     try:
+#         list_of_words = semantic_search(input_data.seeds[0])
+#         if not list_of_words:
+#             raise ValueError("Semantic search returned no results.")
+#         suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
+#         return {"suggestions": suggestions}
+#     except Exception as e:
+#         logging.error(f"Error generating suggestions: {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))
+
+def get_matching_products(customer_choice):
+    catalog_url = "https://storage.googleapis.com/mlopsfileprojectbucket/Redacted_Catalog.json"
+    return catalog_url
+    
 
 if __name__ == "__main__":
     import uvicorn

@@ -11,13 +11,12 @@ seeds = st.text_input("Enter Search Term", "sweater")
 num_steps = 100
 
 # Convert seeds input to list
-#seeds_list = seeds.split(',')
+seeds_list = seeds.split(',')
 
 if st.button("Generate"):
     # Prepare data for FastAPI request
     data = {
-        #"seeds": seeds_list,
-        "seeds" : seeds,
+        "seeds": seeds_list,
         "num_steps": num_steps
     }
     

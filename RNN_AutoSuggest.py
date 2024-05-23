@@ -143,6 +143,8 @@ class InputData(BaseModel):
 class OutputData(BaseModel):
     suggestions: list[str]
 
+# Define FastAPI endpoint
+@app.post("/generate-suggestions-2/", response_model=OutputData)
 def generate_suggestions_endpoint(input_data: InputData):
     try:
         list_of_words = semantic_search(input_data.seeds[0])

@@ -130,6 +130,10 @@ def generate_suggestions(seeds, num_steps=100):
     logging.info(f"Generating suggestions for seeds: {seeds} with num_steps: {num_steps}")
     one_step_model = load_model_and_vocab(model_dir)
 
+    # End any active run
+    if mlflow.active_run():
+        mlflow.end_run()
+
     # Start a new MLflow run
     with mlflow.start_run() as run:
         # Log parameters

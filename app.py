@@ -3,19 +3,21 @@
 import streamlit as st
 import requests
 
-st.title("Generate Suggestions")
+st.title("RNN Autosuggest")
 
 # Input fields
-seeds = st.text_input("Enter seeds (comma-separated)", "sweater")
-num_steps = st.number_input("Number of steps", min_value=1, max_value=100, value=30)
+seeds = st.text_input("Enter Search Term", "sweater")
+#num_steps = st.number_input("Number of steps", min_value=1, max_value=100, value=30)
+num_steps = 100
 
 # Convert seeds input to list
-seeds_list = seeds.split(',')
+#seeds_list = seeds.split(',')
 
 if st.button("Generate"):
     # Prepare data for FastAPI request
     data = {
-        "seeds": seeds_list,
+        #"seeds": seeds_list,
+        "seeds" : seeds
         "num_steps": num_steps
     }
     
@@ -29,7 +31,12 @@ if st.button("Generate"):
         suggestions = response.json().get("suggestions", [])
         st.write("Suggestions:")
         for suggestion in suggestions:
-            st.write(suggestion)
+            res_list = i.splitlines()
+            st.write(res_list)
+
+   
+
+    
     else:
         st.write("Error:", response.status_code)
         st.write(response.json().get("detail", "Unknown error"))

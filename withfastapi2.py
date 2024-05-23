@@ -87,7 +87,7 @@ def semantic_search(seed):
     empty_lists = []
     return_list = []
     final_list = []
-    semantically_similar_categories_path = 'https://storage.googleapis.com/mlopsfileprojectbucket/similar_categories_grouped.json'
+    semantically_similar_categories_path = 'https://storage.googleapis.com/mlopsfileprojectbucket/similar_categories_grouped_v2.json'
     response = requests.get(semantically_similar_categories_path)
     if response.status_code == 200:
         semantically_similar_categories = json.loads(response.text)

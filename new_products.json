@@ -17,24 +17,9 @@
         "uid": 8133989,
         "medias": [
             {
-                "alt": "Women's White and Grey Viscose Striped Strappy Top",
+                "alt": "KRISHI",
                 "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/T0646S/T21Ic5oLD2-1.jpeg"
-            },
-            {
-                "alt": "Women's White and Grey Viscose Striped Strappy Top",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/T0646S/79CfDDxPL2-2.jpeg"
-            },
-            {
-                "alt": "Women's White and Grey Viscose Striped Strappy Top",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/T0646S/ir5oqGDtnq-3.jpeg"
-            },
-            {
-                "alt": "Women's White and Grey Viscose Striped Strappy Top",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/T0646S/xbUHA5TVuQ-4.jpeg"
+                "url": "KRISHI"
             }
         ],
         "sizes": [
@@ -62,7 +47,7 @@
                 "type": "product",
                 "params": {
                     "slug": [
-                        "chimpaaanzee-women-viscose-white-front-knot-crop-top-xvfhwtffc2"
+                        "KRISHI"
                     ]
                 }
             },
@@ -75,7 +60,7 @@
             "sustainable": "Regular",
             "primary_color_hex": "FFFFFF",
             "pattern": "Striped",
-            "description": "Channel smart looks in your casual wardrobe with this white strappy top from CHIMPAAANZEE. Made from viscose fabric, it will provide you with immense comfort throughout the day. Featuring a V-neck, cold shoulder Sleeve and striped pattern, this strappy top possesses a fashionable appeal. Style this strappy top with a pair of wedges for a classy modish look.",
+            "description": "KRISHI",
             "primary_color": "White",
             "marketer-address": "Chimpaaanzee Lifestyle Pvt Ltd, Plot No 1111, 2nd Floor Vatva GIDC Phase-3, Ahmedabad- 382445, GJ",
             "lifestyle": "Casualwear",
@@ -94,10 +79,10 @@
         "categories": [
             {
                 "uid": 504,
-                "name": "Strappy Top",
+                "name": "KRISHI",
                 "logo": {
                     "type": "image",
-                    "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/media/banner_portrait/brand/original/540_ecba3a1af141467da8abc20500f983db.jpg"
+                    "url": "KRISHI"
                 },
                 "action": {
                     "page": {
@@ -113,10 +98,10 @@
             }
         ],
         "seo": {
-            "title": "Women's White and Grey Viscose Striped Strappy Top"
+            "title": "KRISHI"
         },
         "brand": {
-            "name": "CHIMPAAANZEE",
+            "name": "KRISHI",
             "logo": {
                 "type": "image",
                 "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/brands/pictures/square-logo/original/MfCz_-MS7-Logo.jpeg"
@@ -125,7 +110,7 @@
                 "page": {
                     "query": {
                         "brand": [
-                            "KRIVANI"
+                            "KRISHI"
                         ]
                     },
                     "type": "products"

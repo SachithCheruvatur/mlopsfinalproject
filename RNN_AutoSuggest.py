@@ -143,24 +143,6 @@ class InputData(BaseModel):
 class OutputData(BaseModel):
     suggestions: list[str]
 
-# Define FastAPI endpoint
-@app.post("/generate-suggestions-2/", response_model=OutputData)
-# def generate_suggestions_endpoint(input_data: InputData):
-#     try:
-#         list_of_words = semantic_search(input_data.seeds[0])
-#         suggestions = generate_suggestions(list_of_words[0], num_steps=input_data.num_steps)
-#         return {"suggestions": suggestions}
-#     except Exception as e:
-#         logging.error(f"Error generating suggestions: {str(e)}")
-#         raise HTTPException(status_code=500, detail=str(e))
-
-# def generate_suggestions_endpoint(input_data: InputData):
-#     try:
-#         suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
-#         return {"suggestions": suggestions}
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
 def generate_suggestions_endpoint(input_data: InputData):
     try:
         list_of_words = semantic_search(input_data.seeds[0])

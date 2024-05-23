@@ -1,106 +1,49 @@
-[
-    {
+[{
         "itemType": "standard",
-        "identifiers": [
-            "TC-ST-1179-GRYMIC-05",
-            "TC-ST-1179-GRYMIC",
-            "2000000021559"
-        ],
-        "itemCode": "TC-ST-1179-GRYMIC",
+        "itemCode": "SUMCS23_CSWSSDR249",
         "discount": "50% OFF",
         "sellable": true,
-        "shortDescription": "Grey Suede Block Heel Thigh High Boots",
         "type": "product",
         "moq": {
             "minimum": 1,
             "incrementUnit": 1
         },
-        "uid": 7998510,
-        "medias": [
-            {
-                "alt": "Women's Grey Suede Solid Zip Boot",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/kqUUe8vxsw-1.jpg"
-            },
-            {
-                "alt": "Women's Grey Suede Solid Zip Boot",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/IM7PcAPFJZ-2.jpg"
-            },
-            {
-                "alt": "Women's Grey Suede Solid Zip Boot",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/AJIBIUCvxP-3.jpg"
-            },
-            {
-                "alt": "Women's Grey Suede Solid Zip Boot",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/IMK_3eXpDd-4.jpg"
-            },
-            {
-                "alt": "Women's Grey Suede Solid Zip Boot",
-                "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/aAuGC38U0F-5.jpg"
-            }
-        ],
+        "uid": 8745475,
         "sizes": [
-            "5"
+            "L",
+            "M",
+            "S",
+            "XL"
         ],
         "price": {
             "marked": {
-                "min": 5299,
-                "max": 5299,
+                "min": 2199,
+                "max": 2199,
                 "currencySymbol": "?",
                 "currencyCode": "INR"
             },
             "effective": {
-                "min": 2649,
-                "max": 2649,
+                "min": 1099,
+                "max": 1099,
                 "currencySymbol": "?",
                 "currencyCode": "INR"
             }
         },
-        "name": "Women's Grey Suede Solid Zip Boot",
         "action": {
             "page": {
                 "type": "product",
                 "params": {
                     "slug": [
-                        "grey-suede-block-heel-thigh-high-boots-adn4xg1awn7"
+                        "womens-printed-multicolour-regular-fit-dress-owioxikzrrs-8745475"
                     ]
                 }
             },
             "type": "page"
         },
-        "attributes": {
-            "closure_type": "Zip",
-            "occasion": "Casual",
-            "heel-height": "3.5",
-            "boot_length": "Knee",
-            "color": "Grey",
-            "gender": "women",
-            "arch_type": "High-Top",
-            "sustainable": "Regular",
-            "primary_color_hex": "808080",
-            "pattern": "Solid",
-            "description": "Whether you're headed to the office or a night out, these stylish grey boots from Truffle Collection are the perfect accessory. Made from suede materials with a solid pattern, they'll keep your feet comfortable and stylish all day long. With their effortless design and casual chic look, they're perfect for any occasion. Get yours now and take your style to the next level!",
-            "toe_type": "Pointed Toe",
-            "primary_color": "Grey",
-            "marketer-address": "C-144, Okhla Industrial Area, Phase-1, New Delhi - 110020",
-            "sole-material": "Sheet Sole",
-            "lifestyle": "Streetwear",
-            "material": "Suede",
-            "name": "Women's Grey Suede Solid Zip Boot",
-            "marketer-name": "Devyog Solution Pvt Ltd",
-            "season": "AW21",
-            "primary_material": "Suede",
-            "care_instructions": "Surface Dirt Can Be Cleaned With A Good Quality Brush Or A Damp Cloth.",
-            "net-quantity": "2 N"
-        },
         "categories": [
             {
-                "uid": 175,
-                "name": "Boots",
+                "uid": 482,
+                "name": "Sheath Dress",
                 "logo": {
                     "type": "image",
                     "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/media/banner_portrait/brand/original/540_ecba3a1af141467da8abc20500f983db.jpg"
@@ -109,7 +52,7 @@
                     "page": {
                         "query": {
                             "category": [
-                                "boots"
+                                "sheath-dress"
                             ]
                         },
                         "type": "products"
@@ -119,20 +62,19 @@
             }
         ],
         "seo": {
-            "description": "Grey Suede Block Heel Thigh High Boots",
-            "title": "Women's Grey Suede Solid Zip Boot"
+            "title": "Women's Multicolour Cotton Printed Sheath Dress"
         },
         "brand": {
-            "name": "Truffle Collection",
+            "name": "CAMPUS SUTRA",
             "logo": {
                 "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/media/logo/brand/original/2279_07b2a2377ebf41d7be6234a036c6fd87.jpg"
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/brands/pictures/square-logo/original/HhZKFysRa-Logo.png"
             },
             "action": {
                 "page": {
                     "query": {
                         "brand": [
-                            "truffle-collection"
+                            "campus-sutra"
                         ]
                     },
                     "type": "products"
@@ -140,6 +82,66 @@
                 "type": "page"
             }
         },
-        "slug": "grey-suede-block-heel-thigh-high-boots-adn4xg1awn7"
-    }
-]
+        "slug": "womens-printed-multicolour-regular-fit-dress-owioxikzrrs-8745475",
+        "identifiers": [
+            "8905830717284",
+            "SUMCS23_CSWSSDR249",
+            "SUMCS23_CSWSSDR249_M",
+            "8905830717260",
+            "SUMCS23_CSWSSDR249_S",
+            "SUMCS23_CSWSSDR249_XL",
+            "SUMCS23_CSWSSDR249_L",
+            "8905830717291",
+            "8905830717277"
+        ],
+        "medias": [
+            {
+                "alt": "Women's Multicolour Cotton Printed Sheath Dress",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/SUMCS23_CSWSSDR249_S/qz9j_mGyPo-1.jpeg"
+            },
+            {
+                "alt": "Women's Multicolour Cotton Printed Sheath Dress",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/SUMCS23_CSWSSDR249_S/lNwxEM5Bky2-2.jpeg"
+            },
+            {
+                "alt": "Women's Multicolour Cotton Printed Sheath Dress",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/SUMCS23_CSWSSDR249_S/NGj7nVTurA-15.jpeg"
+            },
+            {
+                "alt": "Women's Multicolour Cotton Printed Sheath Dress",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/SUMCS23_CSWSSDR249_S/e7EGZyk-yRL-98.jpeg"
+            },
+            {
+                "alt": "Women's Multicolour Cotton Printed Sheath Dress",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/SUMCS23_CSWSSDR249_S/cfSw1GylL-99.jpeg"
+            }
+        ],
+        "name": "Women's Multicolour Cotton Printed Sheath Dress",
+        "attributes": {
+            "closure_type": "Zip",
+            "color": "Multicolour",
+            "gender": "women",
+            "sustainable": "Regular",
+            "primary_color_hex": "None",
+            "pattern": "Printed",
+            "description": "Wear this stylish dress from the house of Campus Sutra. The dress is comfortable to wear as the fabrics are light on the skin. Using stellar quality solvents, the dress is made for your daily schedule. Constructed to fit your style spot on and a wide range of sizes to match your persona. Made to not leech out its colours and not lose its shape either. Fetch a casual and cool look for yourself by teaming it with a pair of heels.",
+            "primary_color": "Multi",
+            "marketer-address": "1St Floor, Above Girias Showroom,Opposite Indian Oil Petrol Pump, 1-1/E, 7Th Cross, New Guddadahalli, Mysoreroad,Bangalore",
+            "lifestyle": "Streetwear",
+            "material": "Cotton",
+            "neck_type": "V-Neck",
+            "name": "Women's Multicolour Cotton Printed Sheath Dress",
+            "marketer-name": "Campus Sutra",
+            "primary_material": "Cotton",
+            "care_instructions": "Machine wash, wash separately. don't soak for a long time. medium heat iron or line dry in reverse medium heat iron.",
+            "sleeve_length": "Half",
+            "net-quantity": "1 N",
+            "product_fit": "Regular"
+        },
+        "teaserTag": "100% Genuine, Quality Assured"
+    }]

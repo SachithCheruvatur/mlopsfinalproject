@@ -58,6 +58,7 @@ seed = st.text_input("Enter Search Term", "Jeans")
 num_steps = 100  # Fixed number of steps as per your curl command
 
 if st.button("Generate"):
+    return_list = []
     # Prepare data for FastAPI request
     data = {
         "seeds": [seed],  # Send a list with a single seed item

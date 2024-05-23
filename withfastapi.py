@@ -3,6 +3,11 @@ import tensorflow_io as tfio
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+import requests
+import json
+import random
+
+
 app = FastAPI()
 
 # Define the model class as it was originally
@@ -83,6 +88,37 @@ def load_model_and_vocab(gcs_checkpoint_dir):
     
     return one_step_model
 
+def semantic_search (seed):
+    empty_lists = []
+    return_list = []
+    final_list = []
+    semantically_similar_categories_path = 'https://storage.googleapis.com/mlopsfileprojectbucket/similar_categories_grouped.json'
+    response = requests.get(semantically_similar_categories_path)
+    if response.status_code == 200:
+        # Use json.loads() to convert the JSON text to a dictionary
+        semantically_similar_categories = json.loads(response.text)
+        all_keys = semantically_similar_categories.keys()
+        for item in all_keys:
+            empty_lists.append(semantically_similar_categories[item])
+            
+    for i in empty_lists:
+        if (len(return_list)<=5) and (seed in i):
+            length = len(i)
+            if length >= 5:
+                random_choice = random.sample(i, 5)
+                return_list.extend(random_choice)
+            if length <5:
+                return_list.extend(i)
+            break
+
+    for i in return_list:
+        if "(" in list(i):
+            continue
+        else:
+            final_list.append(i.lower())
+    return final_list
+
+
 def generate_suggestions(seeds, num_steps=10):
     #gcs_checkpoint_dir = 'gs://mlopsfileprojectbucket/training_checkpoints'
     #one_step_model = load_model_and_vocab(gcs_checkpoint_dir)
@@ -114,9 +150,17 @@ class OutputData(BaseModel):
 
 # Define FastAPI endpoint
 @app.post("/generate-suggestions/", response_model=OutputData)
+# def generate_suggestions_endpoint(input_data: InputData):
+#     try:
+#         suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
+#         return {"suggestions": suggestions}
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=str(e))
+
 def generate_suggestions_endpoint(input_data: InputData):
     try:
-        suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
+        list_of_words = semantic_search(input_data.seeds)
+        suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
         return {"suggestions": suggestions}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

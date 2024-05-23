@@ -1,0 +1,27 @@
+name: Data Extraction Workflow
+
+on:
+  push:
+    paths:
+      - 'new_products.json'
+
+jobs:
+  run-data-extraction:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'  # or the version you need
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run data_extraction.py
+      run: python data_extraction.py

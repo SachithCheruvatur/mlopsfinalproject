@@ -70,7 +70,7 @@ def load_model_and_vocab(model_dir):
     chars_from_ids = tf.keras.layers.StringLookup(vocabulary=ids_from_chars.get_vocabulary(), invert=True, mask_token=None)
 
     # Ensure tensorflow-io GCS filesystem is initialized
-    tf.io.gfile.exists('gs://')
+    #tf.io.gfile.exists('gs://')
 
     # Load the saved model
     model = tf.keras.models.load_model(model_dir, custom_objects={'MyModel': MyModel})

@@ -74,7 +74,10 @@ if st.button("Generate"):
         suggestions = response.json().get("suggestions", [])
         st.write("Suggestions:")
         for suggestion in suggestions:
-            st.write(suggestion)  # Display each suggestion directly
+            res_list = suggestion.splitlines()
+            return_list.append (res_list[0])
+        for i in return_list:
+            st.write(i)
     else:
         st.write("Error:", response.status_code)
         st.write(response.json().get("detail", "Unknown error"))

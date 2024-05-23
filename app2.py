@@ -49,7 +49,7 @@ if st.button("Generate"):
     }
     
     # FastAPI endpoint URL
-    url = "http://34.93.45.146:8000/generate-suggestions-3/"
+    url = "http://34.93.45.146:8001/generate-suggestions-3/"
     
     # Send POST request to FastAPI
     response = requests.post(url, json=data)

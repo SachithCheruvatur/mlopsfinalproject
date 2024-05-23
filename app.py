@@ -14,6 +14,8 @@ num_steps = 100
 seeds_list = seeds.split(',')
 
 if st.button("Generate"):
+    return_list = []
+
     # Prepare data for FastAPI request
     data = {
         "seeds": seeds_list,
@@ -31,7 +33,8 @@ if st.button("Generate"):
         st.write("Suggestions:")
         for suggestion in suggestions:
             res_list = suggestion.splitlines()
-            st.write(res_list)
+            return_list.append (res_list[0])
+        st.write(return_list)
 
    
 

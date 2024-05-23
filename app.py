@@ -30,7 +30,7 @@ if st.button("Generate"):
         suggestions = response.json().get("suggestions", [])
         st.write("Suggestions:")
         for suggestion in suggestions:
-            res_list = i.splitlines()
+            res_list = suggestion.splitlines()
             st.write(res_list)
 
    

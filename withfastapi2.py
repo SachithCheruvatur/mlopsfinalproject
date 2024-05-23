@@ -152,23 +152,23 @@ class OutputData(BaseModel):
 #         logging.error(f"Error generating suggestions: {str(e)}")
 #         raise HTTPException(status_code=500, detail=str(e))
 
-def generate_suggestions_endpoint(input_data: InputData):
-    try:
-        suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
-        return {"suggestions": suggestions}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
 # def generate_suggestions_endpoint(input_data: InputData):
 #     try:
-#         list_of_words = semantic_search(input_data.seeds[0])
-#         if not list_of_words:
-#             raise ValueError("Semantic search returned no results.")
-#         suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
+#         suggestions = generate_suggestions(input_data.seeds, num_steps=input_data.num_steps)
 #         return {"suggestions": suggestions}
 #     except Exception as e:
-#         logging.error(f"Error generating suggestions: {str(e)}")
 #         raise HTTPException(status_code=500, detail=str(e))
+
+def generate_suggestions_endpoint(input_data: InputData):
+    try:
+        list_of_words = semantic_search(input_data.seeds[0])
+        if not list_of_words:
+            raise ValueError("Semantic search returned no results.")
+        suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
+        return {"suggestions": suggestions}
+    except Exception as e:
+        logging.error(f"Error generating suggestions: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn

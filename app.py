@@ -26,7 +26,7 @@ def fetch_and_search_json(words):
     matching_products = []
     for product in product_list:
         product_title = product.get("title", "").lower()
-        if all(word.lower() in product_title for word in words):
+        if any(word.lower() in product_title for word in words):
             matching_products.append(product)
     
     # Return a shortlist of matching products

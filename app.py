@@ -34,7 +34,8 @@ if st.button("Generate"):
         for suggestion in suggestions:
             res_list = suggestion.splitlines()
             return_list.append (res_list[0])
-        st.write(return_list)
+        for i in return_list:
+            st.write(i)
 
    
 

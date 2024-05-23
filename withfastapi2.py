@@ -146,7 +146,7 @@ class OutputData(BaseModel):
 def generate_suggestions_endpoint(input_data: InputData):
     try:
         list_of_words = semantic_search(input_data.seeds[0])
-        suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
+        suggestions = generate_suggestions(list_of_words[0], num_steps=input_data.num_steps)
         return {"suggestions": suggestions}
     except Exception as e:
         logging.error(f"Error generating suggestions: {str(e)}")

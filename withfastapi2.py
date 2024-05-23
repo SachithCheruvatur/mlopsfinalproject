@@ -166,7 +166,10 @@ def generate_suggestions_endpoint(input_data: InputData):
         list_of_words = semantic_search(input_data.seeds[0])
         if not list_of_words:
             raise ValueError("Semantic search returned no results.")
-        suggestions = generate_suggestions(list_of_words, num_steps=input_data.num_steps)
+        lower_list = []
+        for i in list_of_words:
+            lower_list.append(i.lower())
+        suggestions = generate_suggestions(lower_list, num_steps=input_data.num_steps)
         return {"suggestions": suggestions}
     except Exception as e:
         logging.error(f"Error generating suggestions: {str(e)}")

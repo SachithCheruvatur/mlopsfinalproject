@@ -1,94 +1,115 @@
-[{
+[
+    {
         "itemType": "standard",
         "identifiers": [
-            "T0646S",
-            "T0646",
-            "T0646M",
-            "T0646L"
+            "TC-ST-1179-GRYMIC-05",
+            "TC-ST-1179-GRYMIC",
+            "2000000021559"
         ],
-        "itemCode": "T0646",
-        "discount": "37% OFF",
+        "itemCode": "TC-ST-1179-GRYMIC",
+        "discount": "50% OFF",
         "sellable": true,
+        "shortDescription": "Grey Suede Block Heel Thigh High Boots",
         "type": "product",
         "moq": {
             "minimum": 1,
             "incrementUnit": 1
         },
-        "uid": 8133989,
+        "uid": 7998510,
         "medias": [
             {
-                "alt": "KRISHI",
+                "alt": "Women's Grey Suede Solid Zip Boot",
                 "type": "image",
-                "url": "KRISHI"
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/kqUUe8vxsw-1.jpg"
+            },
+            {
+                "alt": "Women's Grey Suede Solid Zip Boot",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/IM7PcAPFJZ-2.jpg"
+            },
+            {
+                "alt": "Women's Grey Suede Solid Zip Boot",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/AJIBIUCvxP-3.jpg"
+            },
+            {
+                "alt": "Women's Grey Suede Solid Zip Boot",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/IMK_3eXpDd-4.jpg"
+            },
+            {
+                "alt": "Women's Grey Suede Solid Zip Boot",
+                "type": "image",
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/TC-ST-1179-GRYMIC-06/aAuGC38U0F-5.jpg"
             }
         ],
         "sizes": [
-            "L",
-            "M",
-            "S"
+            "5"
         ],
         "price": {
             "marked": {
-                "min": 799,
-                "max": 799,
+                "min": 5299,
+                "max": 5299,
                 "currencySymbol": "?",
                 "currencyCode": "INR"
             },
             "effective": {
-                "min": 499,
-                "max": 499,
+                "min": 2649,
+                "max": 2649,
                 "currencySymbol": "?",
                 "currencyCode": "INR"
             }
         },
-        "name": "KRISHI'S BICYCLE",
+        "name": "Women's Grey Suede Solid Zip Boot",
         "action": {
             "page": {
                 "type": "product",
                 "params": {
                     "slug": [
-                        "KRISHI"
+                        "grey-suede-block-heel-thigh-high-boots-adn4xg1awn7"
                     ]
                 }
             },
             "type": "page"
         },
         "attributes": {
+            "closure_type": "Zip",
             "occasion": "Casual",
-            "color": "White & Grey",
+            "heel-height": "3.5",
+            "boot_length": "Knee",
+            "color": "Grey",
             "gender": "women",
+            "arch_type": "High-Top",
             "sustainable": "Regular",
-            "primary_color_hex": "FFFFFF",
-            "pattern": "Striped",
-            "description": "KRISHI",
-            "primary_color": "White",
-            "marketer-address": "Chimpaaanzee Lifestyle Pvt Ltd, Plot No 1111, 2nd Floor Vatva GIDC Phase-3, Ahmedabad- 382445, GJ",
-            "lifestyle": "Casualwear",
-            "topwear_length": "Short",
-            "material": "Viscose",
-            "neck_type": "V-Neck",
-            "name": "Women's White and Grey Viscose Striped Strappy Top",
-            "marketer-name": "Chimpaaanzee Lifestyle Pvt Ltd",
-            "primary_material": "Viscose",
-            "style": "Casualwear",
-            "care_instructions": "Regular Machine Wash",
-            "sleeve_length": "Long",
-            "net-quantity": "1 N",
-            "product_fit": "Regular"
+            "primary_color_hex": "808080",
+            "pattern": "Solid",
+            "description": "Whether you're headed to the office or a night out, these stylish grey boots from Truffle Collection are the perfect accessory. Made from suede materials with a solid pattern, they'll keep your feet comfortable and stylish all day long. With their effortless design and casual chic look, they're perfect for any occasion. Get yours now and take your style to the next level!",
+            "toe_type": "Pointed Toe",
+            "primary_color": "Grey",
+            "marketer-address": "C-144, Okhla Industrial Area, Phase-1, New Delhi - 110020",
+            "sole-material": "Sheet Sole",
+            "lifestyle": "Streetwear",
+            "material": "Suede",
+            "name": "Women's Grey Suede Solid Zip Boot",
+            "marketer-name": "Devyog Solution Pvt Ltd",
+            "season": "AW21",
+            "primary_material": "Suede",
+            "care_instructions": "Surface Dirt Can Be Cleaned With A Good Quality Brush Or A Damp Cloth.",
+            "net-quantity": "2 N"
         },
         "categories": [
             {
-                "uid": 504,
-                "name": "KRISHI",
+                "uid": 175,
+                "name": "Boots",
                 "logo": {
                     "type": "image",
-                    "url": "KRISHI"
+                    "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/media/banner_portrait/brand/original/540_ecba3a1af141467da8abc20500f983db.jpg"
                 },
                 "action": {
                     "page": {
                         "query": {
                             "category": [
-                                "strappy-top"
+                                "boots"
                             ]
                         },
                         "type": "products"
@@ -98,19 +119,20 @@
             }
         ],
         "seo": {
-            "title": "KRISHI"
+            "description": "Grey Suede Block Heel Thigh High Boots",
+            "title": "Women's Grey Suede Solid Zip Boot"
         },
         "brand": {
-            "name": "KRISHI",
+            "name": "Truffle Collection",
             "logo": {
                 "type": "image",
-                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/brands/pictures/square-logo/original/MfCz_-MS7-Logo.jpeg"
+                "url": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/media/logo/brand/original/2279_07b2a2377ebf41d7be6234a036c6fd87.jpg"
             },
             "action": {
                 "page": {
                     "query": {
                         "brand": [
-                            "KRISHI"
+                            "truffle-collection"
                         ]
                     },
                     "type": "products"
@@ -118,5 +140,6 @@
                 "type": "page"
             }
         },
-        "slug": "chimpaaanzee-women-viscose-white-front-knot-crop-top-xvfhwtffc2"
-    }]
+        "slug": "grey-suede-block-heel-thigh-high-boots-adn4xg1awn7"
+    }
+]

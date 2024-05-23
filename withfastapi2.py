@@ -175,11 +175,6 @@ def generate_suggestions_endpoint(input_data: InputData):
         logging.error(f"Error generating suggestions: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-def get_matching_products(customer_choice):
-    catalog_url = "https://storage.googleapis.com/mlopsfileprojectbucket/Redacted_Catalog.json"
-    return catalog_url
-    
-
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
